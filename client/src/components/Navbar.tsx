@@ -2,17 +2,13 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow">
+    <div className="navbar fixed bg-base-100 shadow">
       <div className="flex-1">
-        <a className="btn btn-ghost btn-sm capitalize md:btn-md md:text-lg 2xl:btn-lg 2xl:text-xl">campus reviewer</a>
+        <a className="btn-ghost btn-sm btn capitalize md:btn-md 2xl:btn-lg md:text-lg 2xl:text-xl">campus reviewer</a>
       </div>
       <div className="flex-none gap-2 md:gap-3">
-        <a className="btn btn-primary btn-xs md:btn-sm">
-          log in
-        </a>
-        <a className="btn btn-primary btn-xs btn-outline md:btn-sm">
-          sign up
-        </a>
+        <a className="btn-primary btn-xs btn md:btn-sm">log in</a>
+        <a className="btn-outline btn-primary btn-xs btn md:btn-sm">sign up</a>
       </div>
       {/* <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
