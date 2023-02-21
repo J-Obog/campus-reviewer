@@ -4,15 +4,15 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow">
       <div className="flex-1">
-        <a className="btn btn-ghost btn-sm normal-case text-lg">Campus Reviewer</a>
+        <a className="btn btn-ghost btn-sm capitalize md:btn-md md:text-lg 2xl:btn-lg 2xl:text-xl">campus reviewer</a>
       </div>
-      <div className="flex-none gap-2">
-        <button className="btn btn-primary btn-xs">
+      <div className="flex-none gap-2 md:gap-3">
+        <a className="btn btn-primary btn-xs md:btn-sm">
           log in
-        </button>
-        <button className="btn btn-primary btn-xs btn-outline">
+        </a>
+        <a className="btn btn-primary btn-xs btn-outline md:btn-sm">
           sign up
-        </button>
+        </a>
       </div>
     </div>
   );
