@@ -14,3 +14,8 @@ body,
 #root {
   height: 100%;
 }
+
+/* Fixes bug from react-rating package that displays the starts vertically instead of horizontally */
+svg.star-svg {
+  display: inline;
+}
