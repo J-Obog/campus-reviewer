@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Search from "./components/Search";
 import CardsContainer from "./components/CardsContainer";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Search />
         <CardsContainer />
       </main>
+      <Footer />
     </>
   );
 };
