@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .page-subtitle {
+    @apply text-center text-black text-6xl font-light;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Fixes bug from react-rating package that displays the starts vertically instead of horizontally */
+svg.star-svg {
+  display: inline;
+}
