@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Campus Reviewer</string>
+
+    <string-array name="filterOptions">
+        <item>Sort By</item>
+        <item>Featured</item>
+        <item>Rated Lowest</item>
+        <item>Rated Highest</item>
+    </string-array>
 </resources>
