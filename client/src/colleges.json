@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Harvard University",
+    "pictureUrl": "https://image.cnbcfm.com/api/v1/image/106578950-1592283323893gettyimages-1212003765.jpeg?v=1592312973",
+    "rating": 5.0,
+    "description": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636 and named for its first benefactor, clergyman John Harvard, Harvard is the oldest institution of higher learning in the United States and among the most prestigious in the world."
+  },
+  {
+    "id": 2,
+    "name": "Stanford University",
+    "pictureUrl": "https://images.shiksha.com/mediadata/images/1533535408phpRuopAS.jpeg",
+    "rating": 4.5,
+    "description": "Stanford University is a private research university in Stanford, California. Stanford is known for its academic strength, wealth, proximity to Silicon Valley, and ranking as one of the world's top universities."
+  },
+  {
+    "id": 3,
+    "name": "Massachusetts Institute of Technology",
+    "pictureUrl": "https://assets.amazon.science/a8/54/7c5f06444330a846b68cce8792cb/mit-campus.jpg",
+    "rating": 4.5,
+    "description": "The Massachusetts Institute of Technology is a private research university in Cambridge, Massachusetts. The Institute is a land-grant, sea-grant, and space-grant university, with an urban campus that extends more than a mile alongside the Charles River."
+  },
+  {
+    "id": 4,
+    "name": "California Institute of Technology",
+    "pictureUrl": "https://www.thoughtco.com/thmb/252w_c8aFsIajuseT7swnrlSUR4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-458411541-7cc7187ad6e94a52a77b63ec40088605.jpg",
+    "rating": 4.5,
+    "description": "The California Institute of Technology is a private research university in Pasadena, California. Caltech has six academic divisions with strong emphasis on science and engineering."
+  },
+  {
+    "id": 5,
+    "name": "Princeton University",
+    "pictureUrl": "https://imageio.forbes.com/specials-images/imageserve/631a08a55eec83b36cb586d2/Princeton-University-Blair-Hall/960x0.jpg?format=jpg&width=960",
+    "rating": 4.5,
+    "description": "Princeton University is a private Ivy League research university in Princeton, New Jersey. Founded in 1746 in Elizabeth as the College of New Jersey, Princeton is the fourth-oldest institution of higher education in the United States and one of the nine colonial colleges chartered before the American Revolution."
+  },
+  {
+    "id": 6,
+    "name": "University of California, Berkeley",
+    "pictureUrl": "https://www.tclf.org/sites/default/files/thumbnails/image/CA_Berkeley_UniversityOfCaliforniaAtBerkeley_byCharlieNguyen-Flickr_2008_001_Sig.jpg",
+    "rating": 4.0,
+    "description": "The University of California, Berkeley is a public research university in Berkeley, California. Established in 1868 as the state's first land-grant university, it is the oldest campus of the University of California system and a founding member of the Association of American Universities."
+  },
+  {
+    "id": 7,
+    "name": "Ohio State University",
+    "pictureUrl": "https://www.science.org/do/10.1126/science.aat8055/abs/ca_0406OSU_Retraction_online_only.jpg",
+    "rating": 4.0,
+    "description": "The Ohio State University is a public research university in Columbus, Ohio. It is the flagship institution of the Ohio State University System and is one of the largest universities in the United States by enrollment."
+  },
+  {
+    "id": 8,
+    "name": "University of Colorado Boulder",
+    "pictureUrl": "https://www.colorado.edu/discover/sites/default/files/styles/large/public/callout/c4c_8423.jpg?itok=pTtTvcpp",
+    "rating": 3.5,
+    "description": "The University of Colorado Boulder is a public research university in Boulder, Colorado. It is the flagship institution of the University of Colorado system and is known for its research in aerospace engineering, physics, and environmental science."
+  },
+  {
+    "id": 9,
+    "name": "Columbia University",
+    "pictureUrl": "https://imageio.forbes.com/specials-images/imageserve/62da9d7923716d9b4539dc3e/0x0.jpg?format=jpg&width=1200",
+    "rating": 4.0,
+    "description": "Columbia University is a private Ivy League research university in New York City. Established in 1754, Columbia is the oldest institution of higher education in New York and the fifth-oldest institution of higher learning in the United States."
+  },
+  {
+    "id": 10,
+    "name": "Yale University",
+    "pictureUrl": "https://mediaim.expedia.com/destination/1/adca140aaae3dfe2d27069d109d05ce7.jpg",
+    "rating": 4.5,
+    "description": "Yale University is a private Ivy League research university in New Haven, Connecticut. Founded in 1701, it is the third-oldest institution of higher education in the United States and one of the nine Colonial Colleges chartered before the American Revolution."
+  },
+  {
+    "id": 11,
+    "name": "University of Chicago",
+    "pictureUrl": "https://www.pennclub.org/images/dynamic/getImage.gif?ID=100002765",
+    "rating": 4.0,
+    "description": "The University of Chicago is a private research university in Chicago, Illinois. The university is composed of an undergraduate college as well as various graduate programs and interdisciplinary committees organized into five academic research divisions."
+  },
+  {
+    "id": 12,
+    "name": "Duke University",
+    "pictureUrl": "https://www.usnews.com/dims4/USNEWS/f35ad8b/17177859217/resize/800x540%3E/quality/85/?url=https%3A%2F%2Fmedia.beam.usnews.com%2F25%2F2d774e6ec10d6ad447ab9c8f3bbd63%2Fcollege-photo_35613.jpg",
+    "rating": 4.0,
+    "description": "Duke University is a private research university in Durham, North Carolina. Founded by Methodists and Quakers in the present-day town of Trinity in 1838, the school moved to Durham in 1892. Duke's campus spans over 8,600 acres on three contiguous campuses in Durham as well as a marine lab in Beaufort."
+  },
+  {
+    "id": 13,
+    "name": "Johns Hopkins University",
+    "pictureUrl": "https://www.cumuonline.org/wp-content/uploads/2018/07/johns-hopkins-university.jpeg",
+    "rating": 4.0,
+    "description": "Johns Hopkins University is a private research university in Baltimore, Maryland. Founded in 1876, the university was named for its first benefactor, the American entrepreneur and philanthropist Johns Hopkins."
+  },
+  {
+    "id": 14,
+    "name": "Cornell University",
+    "pictureUrl": "https://s.abcnews.com/images/Health/cornell-university-campus-gty-jt-220324_1648162378764_hpMain_16x9_1600.jpg",
+    "rating": 4.0,
+    "description": "Cornell University is a private Ivy League research university in Ithaca, New York. Founded in 1865 by Ezra Cornell and Andrew Dickson White, the university was intended to teach and make contributions in all fields of knowledge—from the classics to the sciences, and from the theoretical to the applied."
+  },
+  {
+    "id": 15,
+    "name": "University of Michigan",
+    "pictureUrl": "https://www.cappex.com/sites/default/files/styles/college_hero_desktop/public/images/hero/college/170976_hero.jpg?itok=-X_rnyrv",
+    "rating": 4.0,
+    "description": "The University of Michigan is a public research university in Ann Arbor, Michigan. Founded in 1817 in Detroit, as the Catholepistemiad, or the University of Michigania, 20 years before the territory became a state, the university is Michigan's oldest."
+  },
+  {
+    "id": 16,
+    "name": "University of Massachusetts Amherst",
+    "pictureUrl": "https://www.cappex.com/sites/default/files/styles/college_hero_desktop/public/images/hero/college/166629_hero.jpg?itok=eEjoc6bj",
+    "rating": 2.5,
+    "description": "The University of Massachusetts Amherst is a public research university in Amherst, Massachusetts. It is the flagship campus of the University of Massachusetts system and is the largest public university in New England."
+  },
+  {
+    "id": "17",
+    "name": "University of Wisconsin-Milwaukee",
+    "pictureUrl": "https://www.visitmilwaukee.org/remote.jpg.ashx?mode=crop&width=1920&height=1080&scale=both&urlb64=aHR0cDovL2Fzc2V0cy5zaW1wbGV2aWV3aW5jLmNvbS9zaW1wbGV2aWV3L2ltYWdlL3VwbG9hZC9jX2ZpdCx3XzE5MjAsaF8xMDgwL2NybS9taWx3YXVrZWUvVVdNaWx3YXVrZWUtMTI0MC00ZjdmOTA5MDUwNTZhMzZfNGY3ZjkyOTYtNTA1Ni1hMzZmLTIzMmE5ZGE3OGYwNzAxMWMuanBn&hmac=tNyU_eKVXp4",
+    "rating": 2.5,
+    "description": "The University of Wisconsin–Milwaukee is a public urban research university in Milwaukee, Wisconsin, in the United States. It is the largest university in the Milwaukee metropolitan area and a member of the University of Wisconsin System."
+  },
+  {
+    "id": 18,
+    "name": "San Jose State University",
+    "pictureUrl": "http://www.sjpl.org/sites/default/files/styles/hero_image/public/2019-07/sjsu-tower-lawn.jpg?h=d59b0d8b&itok=Xp3hyZIQ",
+    "rating": 3.0,
+    "description": "San José State University is a public university in San Jose, California. Founded in 1857, it is the oldest public university on the West Coast of the United States."
+  },
+  {
+    "id": 19,
+    "name": "California State University, Northridge",
+    "pictureUrl": "https://www.greenriver.edu/media/content-assets/images/international/university-transfer/northridge-min.jpg",
+    "rating": 2.5,
+    "description": "California State University, Northridge is a public university in the Northridge neighborhood of Los Angeles, California. With a total enrollment of about 40,000 students, it is one of the largest campuses in the California State University system."
+  },
+  {
+    "id": 20,
+    "name": "University of Alabama",
+    "pictureUrl": "https://uasystem.edu/images/contact/UAs-UA-contact2-inline-h-800x640.jpg",
+    "rating": 3.5,
+    "description": "The University of Alabama is a public research university in Tuscaloosa, Alabama. Established in 1820, the University of Alabama is the oldest and largest of the public universities in Alabama and the flagship institution of the University of Alabama System."
+  }
+]

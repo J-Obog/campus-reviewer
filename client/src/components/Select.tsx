@@ -8,7 +8,6 @@ const Select = () => {
         <option value="default" disabled>
           Sort by
         </option>
-        <option value="name">Name</option>
         <option value="popularity">Popularity</option>
         <option value="rating">Rating</option>
         <option value="state">State</option>
