@@ -4,7 +4,7 @@ interface SelectInputState {
   value: string;
 }
 
-const initialState = {
+const initialState: SelectInputState = {
   value: "",
 };
 
