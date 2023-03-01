@@ -1,23 +1,23 @@
-export interface UserModel {
+export class UserModel {
     id: string;
     email: string;
     password: string; 
 }
 
-export interface CollegeModel {
+export class CollegeModel {
     id: string;
     name: string;
     rating: number;
     photo?: string;
 }
 
-export interface FavoriteModel {
+export class FavoriteModel {
     id: string;
     userId: string;
     locationId: string;
 }
 
-export interface ReviewModel {
+export class ReviewModel {
     id: string;
     userId: string;
     locationId: string; 
@@ -31,7 +31,7 @@ export enum LocationType {
     Recreation
 }
 
-export interface LocationModel {
+export class LocationModel {
     id: string;
     collegeId: string;
     locationType: LocationType;
