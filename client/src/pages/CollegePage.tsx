@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import PageButtons from "../components/PageButtons";
+import SaveButton from "../components/SaveButton";
 import CardsContainer from "../components/CardsContainer";
 
 const CollegePage = () => {
@@ -14,7 +14,8 @@ const CollegePage = () => {
       />
       <main className="px-4 py-10 md:py-14">
         <div>
-          <PageButtons />
+          <SaveButton />
+          <button className="btn-primary btn-wide btn">add location</button>
         </div>
         <CardsContainer pageTitle="locations" itemType="locations"  />
       </main>

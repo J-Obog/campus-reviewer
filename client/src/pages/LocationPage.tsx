@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import PageButtons from "../components/PageButtons";
+import SaveButton from "../components/SaveButton";
 
 const LocationPage = () => {
   return (
@@ -13,7 +13,10 @@ const LocationPage = () => {
       />
       <main className="px-4 py-10 md:py-14">
         <div>
-          <PageButtons />
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:justify-center xl:justify-start">
+            <SaveButton />
+            <button className="btn-primary btn-wide btn">add location</button>
+          </div>
         </div>
       </main>
     </>
