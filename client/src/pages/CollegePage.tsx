@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import PageButtons from "../components/PageButtons";
+import CardsContainer from "../components/CardsContainer";
 
 const CollegePage = () => {
   return (
@@ -15,6 +16,7 @@ const CollegePage = () => {
         <div>
           <PageButtons />
         </div>
+        <CardsContainer pageTitle="locations" itemType="locations"  />
       </main>
     </>
   );

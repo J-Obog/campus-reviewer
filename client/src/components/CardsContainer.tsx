@@ -10,39 +10,48 @@ type CardState = {
   description: string;
 };
 
-const CardsContainer = () => {
-  const collegeSearch = useAppSelector((state) => state.searchInput.value);
-  const collegeFilter = useAppSelector((state) => state.selectInput.value);
+type CardsContainerProps = {
+  pageTitle: string;
+  itemType: "colleges" | "locations";
+};
 
-  const [colleges, setColleges] = useState<CardState[]>([]);
+const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
+  const itemSearch = useAppSelector((state) => state.searchInput.value);
+  const itemFilter = useAppSelector((state) => state.selectInput.value);
+
+  const [items, setItems] = useState<CardState[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5173/src/colleges.json")
+    fetch(`http://127.0.0.1:5173/src/${itemType}.json`)
       .then((res) => res.json())
-      .then((data) => setColleges(data));
+      .then((data) => setItems(data));
   }, []);
 
-  const filterColleges = (colleges: CardState[]) => {
-    const filteredColleges = colleges.filter(college => college.name.toLowerCase().includes(collegeSearch.toLowerCase()));
-
-    if (collegeFilter === "rating") {
-      filteredColleges.sort((a, b) => b.rating - a.rating);
+  const filterItems = (items: CardState[]) => {
+    if (itemType === "colleges") {
+      const filteredItems = items.filter(item => item.name.toLowerCase().includes(itemSearch.toLowerCase()));
+  
+      if (itemFilter === "rating") {
+        filteredItems.sort((a, b) => b.rating - a.rating);
+      }
+  
+      return filteredItems;
     }
-
-    return filteredColleges;
+    
+    return items;
   };
 
   return (
     <div className="my-16">
-      <h2 className="page-subtitle">Colleges</h2>
+      <h2 className="page-subtitle">{pageTitle}</h2>
       <div className="my-12 grid grid-cols-1 justify-center gap-14 sm:mx-3 sm:grid-cols-2 sm:gap-x-6 md:mx-6 md:gap-x-10 lg:mx-10 lg:grid-cols-3 xl:mx-14 2xl:mx-20 2xl:grid-cols-4">
-        {filterColleges(colleges).map((college) => (
+        {filterItems(items).map((item) => (
           <Card 
-            key={college.id} 
-            name={college.name} 
-            imgUrl={college.pictureUrl} 
-            description={college.description} 
-            rating={college.rating} 
+            key={item.id} 
+            name={item.name} 
+            imgUrl={item.pictureUrl} 
+            description={item.description} 
+            rating={item.rating} 
           />
         ))}
       </div>
