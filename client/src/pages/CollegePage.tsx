@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import { BiBookmark } from "react-icons/bi";
 
 const CollegePage = () => {
   return (
@@ -10,6 +11,19 @@ const CollegePage = () => {
         showButton={false}
         rating={5.0}
       />
+      <main className="px-4 py-10 md:py-14">
+        <div>
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:justify-center xl:justify-start">
+          <button className="btn btn-primary btn-outline gap-2">
+            save
+            <span className="text-xl">
+              <BiBookmark />
+            </span>
+          </button>
+          <button className="btn btn-primary btn-wide">add location</button>
+          </div>
+        </div>
+      </main>
     </>
   );
 };
