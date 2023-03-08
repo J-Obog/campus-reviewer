@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import SaveButton from "../components/SaveButton";
+import ReviewsContainer from "../components/ReviewsContainer";
 
 const LocationPage = () => {
   return (
@@ -15,9 +16,10 @@ const LocationPage = () => {
         <div>
           <div className="flex flex-col items-center gap-5 sm:flex-row sm:justify-center xl:justify-start">
             <SaveButton />
-            <button className="btn-primary btn-wide btn">add location</button>
+            <button className="btn-primary btn-wide btn">add review</button>
           </div>
         </div>
+        <ReviewsContainer />
       </main>
     </>
   );

@@ -1,0 +1,44 @@
+[
+  {
+    "avatarUrl": "https://i.pravatar.cc/300?img=6",
+    "userName": "John Doe",
+    "rating": 3.5,
+    "timestamp": "2023-03-07 10:36:25",
+    "comment": "The computer labs are very well equiped and there are usually plenty computers available. I just wish there were more macs. The classrooms are ok but can get kinda hot during the summer."
+  },
+  {
+    "avatarUrl": "https://i.pravatar.cc/300?img=2",
+    "userName": "Olivia Wilson",
+    "rating": 5.0,
+    "timestamp": "2023-03-03 08:50:19",
+    "comment": "This college is fantastic! The professors are top-notch, the facilities are state-of-the-art, and there are endless opportunities to get involved and grow as a student. Highly recommend!"
+  },
+  {
+    "avatarUrl": "https://i.pravatar.cc/300?img=3",
+    "userName": "David Lee",
+    "rating": 2.5,
+    "timestamp": "2023-02-27 16:08:42",
+    "comment": "The labs have all the equipment you need, but they can get crowded during lab sessions. The teaching assistants are helpful though."
+  },
+  {
+    "avatarUrl": "https://i.pravatar.cc/300?img=4",
+    "userName": "Jacob Brown",
+    "rating": 4.5,
+    "timestamp": "2023-01-04 14:33:28",
+    "comment": "The campus is well-maintained and clean, and the buildings are all easily accessible. There are also plenty of events and activities to get involved in."
+  },
+  {
+    "avatarUrl": "https://i.pravatar.cc/300?img=5",
+    "userName": "Emily Davis",
+    "rating": 4.0,
+    "timestamp": "2022-07-15 09:17:55",
+    "comment": "The professors are knowledgeable and engaging, and they create a great learning environment. The only downside is that some classes can be quite challenging."
+  },
+  {
+    "avatarUrl": "https://i.pravatar.cc/300?img=1",
+    "userName": "Alice Johnson",
+    "rating": 3.0,
+    "timestamp": "2020-09-27 11:25:13",
+    "comment": "The classrooms are decent, with comfortable chairs and enough space to move around. However, some of the chalkboards are difficult to read."
+  }
+]
