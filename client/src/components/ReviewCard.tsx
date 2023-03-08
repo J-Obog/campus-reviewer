@@ -1,4 +1,5 @@
 import { Rating } from "react-simple-star-rating";
+import moment from "moment";
 
 type ReviewCardProps = {
   id: string;
@@ -30,7 +31,7 @@ const ReviewCard = ({ id, avatarUrl, userName, rating, timestamp, comment }: Rev
         </div>
 
         {/* How long ago*/}
-        <span className="shrink-0">{timestamp}</span>
+        <span className="shrink-0">{moment(timestamp).fromNow()}</span>
       </div>
 
       <p>{comment}</p>
