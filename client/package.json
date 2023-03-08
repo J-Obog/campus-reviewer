@@ -13,6 +13,7 @@
     "@types/react-redux": "^7.1.25",
     "@types/redux": "^3.6.0",
     "daisyui": "^2.50.2",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
