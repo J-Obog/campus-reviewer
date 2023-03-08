@@ -1,4 +1,6 @@
 import Hero from "../components/Hero";
+import PageButtons from "../components/PageButtons";
+import CardsContainer from "../components/CardsContainer";
 
 const CollegePage = () => {
   return (
@@ -10,6 +12,12 @@ const CollegePage = () => {
         showButton={false}
         rating={5.0}
       />
+      <main className="px-4 py-10 md:py-14">
+        <div>
+          <PageButtons />
+        </div>
+        <CardsContainer pageTitle="locations" itemType="locations"  />
+      </main>
     </>
   );
 };
