@@ -20,7 +20,7 @@ const Card = ({ name, imgUrl, description, rating }: CardProps ) => {
   };
 
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card bg-base-100 shadow-xl dark:bg-card-dark">
       <figure className="h-56">
         <img src={imgUrl} alt={`Image of ${name}`} className="h-full w-full object-cover" />
       </figure>

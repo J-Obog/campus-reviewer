@@ -12,7 +12,7 @@ type ReviewCardProps = {
 
 const ReviewCard = ({ id, avatarUrl, userName, rating, timestamp, comment }: ReviewCardProps) => {
   return (
-    <div className="mx-auto space-y-2 rounded-lg p-5 shadow-md md:w-11/12 lg:w-5/6 lg:space-y-5 xl:w-8/12 2xl:w-7/12">
+    <div className="mx-auto space-y-2 rounded-lg p-5 shadow-md md:w-11/12 lg:w-5/6 lg:space-y-5 xl:w-8/12 2xl:w-7/12 dark:bg-card-dark">
       <div className="flex justify-between">
         <div className="flex flex-col gap-2 sm:flex-row">
 
