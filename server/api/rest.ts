@@ -1,3 +1,4 @@
+import { College } from "../db/schema";  
 
 export type RestRequest = {
     url: string
@@ -11,3 +12,9 @@ export type RestResponse = {
     status: number;
     data: Object;
 } 
+
+export type GetCollegesResponse = {
+    colleges: College[]; 
+}
+
+export type GetCollegeResponse = College; 

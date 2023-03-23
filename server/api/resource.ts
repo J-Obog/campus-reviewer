@@ -1,5 +1,9 @@
-export
+import { 
+    GetCollegeResponse, 
+    GetCollegesResponse 
+} from "./rest";
 
 export interface CollegeResource {
-    getAllColleges(): void; 
+    getAllColleges(): GetCollegesResponse; 
+    getCollege(): GetCollegeResponse;
 }
