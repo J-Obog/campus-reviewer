@@ -1,5 +1,5 @@
 
 export interface Server {
-    run(host: string, port: number): void; 
+    run(port: number): void; 
     stop(): void; 
 }
