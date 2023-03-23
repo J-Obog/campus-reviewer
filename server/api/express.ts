@@ -22,7 +22,7 @@ export class ExpressServer implements Server {
                 meta: {},
                 body: req.body,
             } 
-            
+
             const fnResponse = restFn(restReq);
             res.status(fnResponse.status).json(fnResponse.data);
         }
@@ -30,7 +30,7 @@ export class ExpressServer implements Server {
 
     run(port: number): void {
         this.app.listen(port, () => {
-            console.log( `server running on port ${port}` );
+            console.log(`server running on port ${port}`);
         })
     }
 

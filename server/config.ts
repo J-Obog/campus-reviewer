@@ -8,12 +8,18 @@ export type PostgresConfig = {
     port: number
 };
 
+export type ExpressConfig = {
+    host: string;
+    port: number; 
+}
+
 export type AppConfig = {
-    postgresConfig: PostgresConfig
+    postgresConfig: PostgresConfig;
+    expressConfig: ExpressConfig; 
 }
 
 export const getConfig = (): AppConfig => {
-    const env = process.env["ts_app_env"]!;  
+    const env = process.env["NODE_APP_ENV"]!;  
     
     if(env === "DEV") {
         dotenv.config(); 
@@ -21,11 +27,15 @@ export const getConfig = (): AppConfig => {
 
     return {
         postgresConfig: {
-            database: process.env["pg_db"]!,
-            username: process.env["pg_user"]!, 
-            password: process.env["pg_pass"]!, 
-            host: process.env["pg_host"]!,
-            port: Number(process.env["pg_port"]!)
+            database: process.env["PG_DB"]!,
+            username: process.env["PG_USER"]!, 
+            password: process.env["PG_PASS"]!, 
+            host: process.env["PG_HOST"]!,
+            port: Number(process.env["PG_PORT"]!)
+        },
+        expressConfig: {
+            host: process.env["APP_HOST"]!,
+            port: Number(process.env["APP_PORT"]!)
         }
     }
 }
