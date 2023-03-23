@@ -21,11 +21,11 @@ export const getConfig = (): AppConfig => {
 
     return {
         postgresConfig: {
-            database: process.env["ts_app_env"]!,
-            username: process.env["ts_app_env"]!, 
-            password: process.env["ts_app_env"]!, 
-            host: process.env["ts_app_env"]!,
-            port: Number(process.env["ts_app_env"]!)
+            database: process.env["pg_db"]!,
+            username: process.env["pg_user"]!, 
+            password: process.env["pg_pass"]!, 
+            host: process.env["pg_host"]!,
+            port: Number(process.env["pg_port"]!)
         }
     }
 }
