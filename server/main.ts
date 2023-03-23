@@ -13,7 +13,7 @@ function main() {
         port: config.postgresConfig.port,
         database: config.postgresConfig.database,
         entities: [CollegePgEntity],
-    })
+    })    
 }
 
 main();

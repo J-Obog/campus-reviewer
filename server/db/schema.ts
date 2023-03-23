@@ -1,23 +1,23 @@
-export class UserModel {
+export type UserModel = {
     id: string;
     email: string;
     password: string; 
 }
 
-export class CollegeModel {
+export type CollegeModel = {
     id: string;
     name: string;
     rating: number;
     photo?: string;
 }
 
-export class FavoriteModel {
+export type FavoriteModel = {
     id: string;
     userId: string;
     locationId: string;
 }
 
-export class ReviewModel {
+export type ReviewModel = {
     id: string;
     userId: string;
     locationId: string; 
@@ -31,7 +31,7 @@ export enum LocationType {
     Recreation
 }
 
-export class LocationModel {
+export type LocationModel = {
     id: string;
     collegeId: string;
     locationType: LocationType;
