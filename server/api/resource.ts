@@ -1,9 +1,6 @@
-import { 
-    GetCollegeResponse, 
-    GetCollegesResponse 
-} from "./rest";
+import {  RestRequest, RestResponse } from "./rest";
 
 export interface CollegeResource {
-    getAllColleges(): GetCollegesResponse; 
-    getCollege(): GetCollegeResponse;
+    getAllColleges(req: RestRequest): Promise<RestResponse>; 
+    getCollege(req: RestRequest): Promise<RestResponse>;
 }
