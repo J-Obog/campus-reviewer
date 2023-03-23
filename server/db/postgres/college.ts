@@ -37,4 +37,9 @@ export class CollegeStorePg implements CollegeStore {
         const entities = await this.repo.find(); 
         return entities.map(entity => entity.toObj()); 
     }
+
+    async getCollege(id: string): Promise<College | null> {
+        const college = await this.repo.findOneBy({ id: id }); 
+        return college ? college.toObj() : null; 
+    }
 }

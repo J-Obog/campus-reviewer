@@ -1,11 +1,15 @@
-import { College } from "../db/schema";  
+import { College } from "../db/schema"; 
+
+interface JSONObj {
+    [key: string]: any  
+}
 
 export type RestRequest = {
     url: string
-    urlParams: Object;
-	queryParams: Object;
-	meta: Object;
-	body: Object;
+    urlParams: JSONObj;
+	queryParams: JSONObj;
+	meta: JSONObj;
+	body: JSONObj;
 } 
 
 export type RestResponse = {

@@ -21,5 +21,16 @@ export class CollegeResourceImpl implements CollegeResource {
     }
 
     async getCollege(req: RestRequest): Promise<RestResponse> {
+        try {
+            const college = await this.collegeStore.getCollege(req.body.id); 
+
+            if (!college) {
+                return { status: 404, data: { message: "College could not be found" }}; 
+            }
+
+            return { status: 200, data: college }; 
+        } catch {
+            return { status: 500, data: { message: "Internal server error" }}; 
+        }
     }
 }   
