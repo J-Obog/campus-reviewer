@@ -1,4 +1,3 @@
-import { College } from "../../db/schema";
 import { CollegeResource } from "../resource"; 
 import { CollegeStore } from "../../db/store";
 import { RestRequest, RestResponse } from "../rest";
