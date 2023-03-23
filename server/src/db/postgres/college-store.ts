@@ -2,7 +2,7 @@ import { Repository, DataSource, Entity, Column, PrimaryColumn } from "typeorm"
 import { CollegeModel } from "../schema"; 
 import { CollegeStore } from "../store";
 
-@Entity()
+@Entity("colleges")
 export class CollegePgEntity {
     @PrimaryColumn()
     id: string
