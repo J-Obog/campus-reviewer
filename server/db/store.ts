@@ -1,5 +1,5 @@
-import { CollegeModel } from "./schema"; 
+import { College } from "./schema"; 
 
 export interface CollegeStore {
-    getAllColleges(): CollegeModel[]; 
+    getAllColleges(): Promise<College[]>; 
 }
