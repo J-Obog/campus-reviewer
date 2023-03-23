@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm"
-import { CollegePgEntity } from "./db/postgres/college-store" 
+import { CollegeModel } from "./db/postgres/college" 
 import { getConfig } from "./config"; 
 
 function main() {
@@ -12,7 +12,7 @@ function main() {
         password: config.postgresConfig.password,
         port: config.postgresConfig.port,
         database: config.postgresConfig.database,
-        entities: [CollegePgEntity],
+        entities: [CollegeModel],
     })    
 }
 
