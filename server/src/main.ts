@@ -1,4 +1,3 @@
-//import "reflect-metadata"
 import { DataSource } from "typeorm"
 import { CollegePgEntity } from "./db/postgres/college-store" 
 

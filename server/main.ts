@@ -1,8 +1,7 @@
-import { DataSource } from "typeorm";
-import { CollegeStorePg } from "./db/postgres/college-store";
+import * as dotenv from 'dotenv'
 
-async function foo() {
-    f = CollegeStorePg();
+async function main() {
+    console.log("Hello world!");
 }
 
-foo();
+main();
