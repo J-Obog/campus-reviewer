@@ -2,7 +2,7 @@ import { DataSource } from "typeorm"
 import { CollegeModel } from "./db/postgres/college" 
 import { getConfig } from "./config"; 
 
-function main() {
+async function main() {
     const config = getConfig(); 
     
     const conn = new DataSource({
@@ -14,6 +14,13 @@ function main() {
         database: config.postgresConfig.database,
         entities: [CollegeModel],
     })    
+
+    // connect to database
+    try {
+        await conn.initialize(); 
+    } catch(err) {
+        console.error(err); 
+    }
 }
 
 main();
