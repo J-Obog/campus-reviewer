@@ -16,7 +16,7 @@ export class CollegeModel {
     @Column()
     photo?: string
 
-    toObj(): College {
+    toObj = (): College => {
         return {
             id: this.id,
             name: this.name,
@@ -33,12 +33,12 @@ export class CollegeStorePg implements CollegeStore {
         this.repo = conn.getRepository(CollegeModel); 
     } 
 
-    async getAllColleges(): Promise<College[]> {
+    getAllColleges = async (): Promise<College[]> =>  {
         const entities = await this.repo.find(); 
         return entities.map(entity => entity.toObj()); 
     }
 
-    async getCollege(id: string): Promise<College | null> {
+    getCollege = async (id: string): Promise<College | null> => {
         const college = await this.repo.findOneBy({ id: id }); 
         return college ? college.toObj() : null; 
     }

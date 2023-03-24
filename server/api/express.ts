@@ -9,12 +9,12 @@ export class ExpressServer implements Server {
 
     constructor(collegeResource: CollegeResource) {
         this.app = express();
-        this.app.get("/college", collegeResource.getAllColleges);
+        this.app.get("/college", this._request_handler(collegeResource.getAllColleges));
         this.app.get("/college/:id", collegeResource.getCollege);
     }
 
-    _request_handler(restFn: (req: RestRequest) => RestResponse): express.RequestHandler {
-        return (req: express.Request, res: express.Response) => {
+    _request_handler = (restFn: (req: RestRequest) => Promise<RestResponse>): express.RequestHandler => {
+        return async (req: express.Request, res: express.Response) => {
             const restReq: RestRequest = {
                 url: req.url, 
                 urlParams: req.params,
@@ -23,18 +23,18 @@ export class ExpressServer implements Server {
                 body: req.body,
             } 
 
-            const fnResponse = restFn(restReq);
+            const fnResponse = await restFn(restReq);
             res.status(fnResponse.status).json(fnResponse.data);
         }
     }
 
-    run(port: number): void {
+    run = (port: number): void => {
         this.app.listen(port, () => {
             console.log(`server running on port ${port}`);
         })
     }
 
-    stop(): void {
+    stop = (): void => {
         // to implement
     }
 }
