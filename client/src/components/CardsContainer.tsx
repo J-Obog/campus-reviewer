@@ -29,7 +29,9 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
 
   const filterItems = (items: CardState[]) => {
     if (itemType === "college") {
-      const filteredItems = items.filter((item) => item.name.toLowerCase().includes(itemSearch.toLowerCase()));
+      const filteredItems = items.filter((item) =>
+        item.name.toLowerCase().includes(itemSearch.toLowerCase())
+      );
 
       if (itemFilter === "rating") {
         filteredItems.sort((a, b) => b.rating - a.rating);
@@ -46,12 +48,15 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
       <h2 className="page-subtitle">{pageTitle}</h2>
       <div className="my-12 grid grid-cols-1 justify-center gap-14 sm:mx-3 sm:grid-cols-2 sm:gap-x-6 md:mx-6 md:gap-x-10 lg:mx-10 lg:grid-cols-3 xl:mx-14 2xl:mx-20 2xl:grid-cols-4">
         {filterItems(items).map((item) => (
-          <Card 
-            key={item.id} 
-            name={item.name} 
-            imgUrl={item.photo} 
-            description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} 
-            rating={item.rating} />
+          <Card
+            key={item.id}
+            name={item.name}
+            imgUrl={item.photo}
+            description={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+            rating={item.rating}
+          />
         ))}
       </div>
       <div className="flex justify-center">

@@ -6,9 +6,11 @@ const LocationPage = () => {
   return (
     <>
       <Hero
-        image={"http://www.hoffarch.com/assets/SUNY-Whitman-overview.jpg"} 
+        image={"http://www.hoffarch.com/assets/SUNY-Whitman-overview.jpg"}
         title={"Whitman Hall"}
-        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam."}
+        description={
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam."
+        }
         showButton={false}
         rating={3.5}
       />
