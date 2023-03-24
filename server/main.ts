@@ -4,6 +4,7 @@ import { ExpressServer } from "./api/express";
 import { CollegeResourceImpl } from "./api/resources/college";
 import { CollegeModel, CollegeStorePg } from "./db/postgres/college"
 import { LocationModel, LocationStorePg } from "./db/postgres/location"  
+import { LocationResourceImpl } from "./api/resources/location";
 
 const main = async () => {
     const config = getConfig(); 
@@ -29,9 +30,10 @@ const main = async () => {
         
         // resources
         const collegeResource = new CollegeResourceImpl(collegeStore); 
+        const locationResource = new LocationResourceImpl(locationStore); 
 
         // app server
-        const server = new ExpressServer(collegeResource); 
+        const server = new ExpressServer(collegeResource, locationResource); 
         server.run(config.expressConfig.port); 
         
     } catch(err) {
