@@ -15,7 +15,7 @@ const LandingPage = () => {
       />
       <main className="px-4 py-10 md:py-14">
         <Search />
-        <CardsContainer pageTitle="colleges" itemType="colleges" />
+        <CardsContainer pageTitle="colleges" itemType="college" />
       </main>
     </>
   );
