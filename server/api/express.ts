@@ -13,8 +13,8 @@ export class ExpressServer implements Server {
         this.app.use(cors());
         this.app.get("/college", this._request_handler(collegeResource.getAllColleges));
         this.app.get("/college/:id", this._request_handler(collegeResource.getCollege));
-        this.app.get("/location", this._request_handler(locationResource.getLocation));
-        this.app.get("/location/:id", this._request_handler(locationResource.getLocationsByCollege));
+        this.app.get("/location/:id", this._request_handler(locationResource.getLocation));
+        this.app.get("/location", this._request_handler(locationResource.getLocationsByCollege));
     }
 
     _request_handler = (restFn: (req: RestRequest) => Promise<RestResponse>): express.RequestHandler => {
