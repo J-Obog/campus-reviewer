@@ -13,23 +13,29 @@ const LoginPage = () => {
         <div className="card w-full max-w-sm flex-shrink-0 bg-base-100 shadow-2xl">
           <div className="card-body">
             <div className="form-control">
-              <label className="label">
+              <label htmlFor="email" className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="text"
                 placeholder="email"
                 className="input-bordered input"
+                id="email"
+                name="email"
+                required
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label htmlFor="password" className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
                 type="text"
                 placeholder="password"
                 className="input-bordered input"
+                id="password"
+                name="password"
+                required
               />
               <label className="label">
                 <a href="#" className="link-hover label-text-alt link">
@@ -38,7 +44,7 @@ const LoginPage = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn-primary btn">Login</button>
+              <button aria-label="Log in to campus reviewer" className="btn-primary btn">Login</button>
             </div>
           </div>
         </div>
