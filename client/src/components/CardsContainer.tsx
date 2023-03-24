@@ -3,16 +3,16 @@ import { useAppSelector } from "../redux/store";
 import Card from "./Card";
 
 type CardState = {
-  id: number;
+  id: string;
   name: string;
-  pictureUrl: string;
+  photo: string;
   rating: number;
-  description: string;
+  // description: string;
 };
 
 type CardsContainerProps = {
   pageTitle: string;
-  itemType: "colleges" | "locations";
+  itemType: "college" | "locations";
 };
 
 const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
@@ -22,22 +22,22 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
   const [items, setItems] = useState<CardState[]>([]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5173/src/${itemType}.json`)
+    fetch(`https://campus-reviewer-web.onrender.com/college`)
       .then((res) => res.json())
-      .then((data) => setItems(data));
+      .then((data) => setItems(data.colleges));
   }, []);
 
   const filterItems = (items: CardState[]) => {
-    if (itemType === "colleges") {
-      const filteredItems = items.filter(item => item.name.toLowerCase().includes(itemSearch.toLowerCase()));
-  
+    if (itemType === "college") {
+      const filteredItems = items.filter((item) => item.name.toLowerCase().includes(itemSearch.toLowerCase()));
+
       if (itemFilter === "rating") {
         filteredItems.sort((a, b) => b.rating - a.rating);
       }
-  
+
       return filteredItems;
     }
-    
+
     return items;
   };
 
@@ -49,10 +49,9 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
           <Card 
             key={item.id} 
             name={item.name} 
-            imgUrl={item.pictureUrl} 
-            description={item.description} 
-            rating={item.rating} 
-          />
+            imgUrl={item.photo} 
+            description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} 
+            rating={item.rating} />
         ))}
       </div>
       <div className="flex justify-center">
