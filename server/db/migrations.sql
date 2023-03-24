@@ -4,3 +4,11 @@ CREATE TABLE IF NOT EXISTS colleges (
     "rating" FLOAT NOT NULL,
     "photo" VARCHAR NULL
 );
+
+CREATE TABLE IF NOT EXISTS locations (
+    "id" VARCHAR PRIMARY KEY,
+    "collegeId" VARCHAR PRIMARY KEY,
+    "locationType" INTEGER NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "rating" FLOAT NOT NULL,
+);
