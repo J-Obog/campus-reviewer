@@ -10,7 +10,7 @@ export class ExpressServer implements Server {
     constructor(collegeResource: CollegeResource) {
         this.app = express();
         this.app.get("/college", this._request_handler(collegeResource.getAllColleges));
-        this.app.get("/college/:id", collegeResource.getCollege);
+        this.app.get("/college/:id", this._request_handler(collegeResource.getCollege));
     }
 
     _request_handler = (restFn: (req: RestRequest) => Promise<RestResponse>): express.RequestHandler => {

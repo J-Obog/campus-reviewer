@@ -23,7 +23,7 @@ export class CollegeResourceImpl implements CollegeResource {
 
     getCollege = async (req: RestRequest): Promise<RestResponse> => {
         try {
-            const college = await this.collegeStore.getCollege(req.body.id); 
+            const college = await this.collegeStore.getCollege(req.urlParams.id); 
 
             if (!college) {
                 return { status: 404, data: { message: "College could not be found" }}; 
