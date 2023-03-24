@@ -1,8 +1,9 @@
 import { DataSource } from "typeorm"
-import { CollegeModel, CollegeStorePg } from "./db/postgres/college" 
 import { getConfig } from "./config"; 
 import { ExpressServer } from "./api/express";
 import { CollegeResourceImpl } from "./api/resources/college";
+import { CollegeModel, CollegeStorePg } from "./db/postgres/college"
+import { LocationModel, LocationStorePg } from "./db/postgres/location"  
 
 const main = async () => {
     const config = getConfig(); 
@@ -17,14 +18,15 @@ const main = async () => {
             password: config.postgresConfig.password,
             port: config.postgresConfig.port,
             database: config.postgresConfig.database,
-            entities: [CollegeModel],
+            entities: [CollegeModel, LocationModel],
         })    
     
         await conn.initialize(); 
     
         // db stores
         const collegeStore = new CollegeStorePg(conn); 
-
+        const locationStore = new LocationStorePg(conn); 
+        
         // resources
         const collegeResource = new CollegeResourceImpl(collegeStore); 
 
