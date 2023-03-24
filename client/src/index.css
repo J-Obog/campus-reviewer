@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .page-subtitle {
-    @apply text-center text-black text-6xl font-light capitalize dark:text-white;
+    @apply text-center text-6xl font-light capitalize text-black dark:text-white;
   }
 }
 
