@@ -27,7 +27,6 @@ const main = async () => {
 
         // resources
         const collegeResource = new CollegeResourceImpl(collegeStore); 
-        console.log(collegeResource.collegeStore); 
 
         // app server
         const server = new ExpressServer(collegeResource); 
