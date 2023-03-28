@@ -18,6 +18,7 @@ type CardsContainerProps = {
 const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
   const itemSearch = useAppSelector((state) => state.searchInput.value);
   const itemFilter = useAppSelector((state) => state.selectInput.value);
+  const themeValue = useAppSelector((state) => state.theme.value);
 
   const [items, setItems] = useState<CardState[]>([]);
 
@@ -51,7 +52,15 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
 
   return (
     <div className="my-16">
-      {pageTitle && <h2 className="page-subtitle">{pageTitle}</h2>}
+      {pageTitle && (
+        <h2
+          className={`page-subtitle ${
+            themeValue === "night" && "text-white"
+          }`}
+        >
+          {pageTitle}
+        </h2>
+      )}
       <div className="my-12 grid grid-cols-1 justify-center gap-14 sm:mx-3 sm:grid-cols-2 sm:gap-x-6 md:mx-6 md:gap-x-10 lg:mx-10 lg:grid-cols-3 xl:mx-14 2xl:mx-20 2xl:grid-cols-4">
         {items &&
           filterItems(items).map((item) => (

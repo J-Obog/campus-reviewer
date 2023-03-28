@@ -1,5 +1,6 @@
 import { Rating } from "react-simple-star-rating";
 import moment from "moment";
+import { useAppSelector } from "../redux/store";
 
 type ReviewCardProps = {
   id: string;
@@ -18,8 +19,12 @@ const ReviewCard = ({
   timestamp,
   comment,
 }: ReviewCardProps) => {
+  const themeValue = useAppSelector((state) => state.theme.value);
+
   return (
-    <div className="mx-auto space-y-2 rounded-lg p-5 shadow-md dark:bg-card-dark md:w-11/12 lg:w-5/6 lg:space-y-5 xl:w-8/12 2xl:w-7/12">
+    <div
+      className={`mx-auto space-y-2 rounded-lg p-5 shadow-md ${themeValue === "night" && "bg-card-dark"} md:w-11/12 lg:w-5/6 lg:space-y-5 xl:w-8/12 2xl:w-7/12`}
+    >
       <div className="flex justify-between">
         <div className="flex flex-col gap-2 sm:flex-row">
           {/* User avatar */}

@@ -98,7 +98,7 @@ const AccountSettings = () => {
         <div className="divider"></div>
 
         <div>
-          <ThemeToggle />
+          <ThemeToggle size="large" />
         </div>
 
         <div className="divider"></div>

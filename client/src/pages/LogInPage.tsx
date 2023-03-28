@@ -1,6 +1,11 @@
+import ThemeToggle from "../components/ThemeToggle";
+
 const LoginPage = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
+      <div className="hidden">
+        <ThemeToggle size={null} />
+      </div>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
@@ -44,7 +49,12 @@ const LoginPage = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button aria-label="Log in to campus reviewer" className="btn-primary btn">Login</button>
+              <button
+                aria-label="Log in to campus reviewer"
+                className="btn-primary btn"
+              >
+                Login
+              </button>
             </div>
           </div>
         </div>

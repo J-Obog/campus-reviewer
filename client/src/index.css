@@ -4,7 +4,7 @@
 
 @layer components {
   .page-subtitle {
-    @apply text-center text-6xl font-light capitalize text-black dark:text-white;
+    @apply text-center text-6xl font-light capitalize text-black;
   }
 }
 
