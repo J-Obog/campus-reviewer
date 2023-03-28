@@ -4,7 +4,7 @@ import { updateTheme } from "../redux/slices/ThemeSlice";
 import { useAppSelector, useAppDispatch } from "../redux/store";
 
 type ThemeToggleProps = {
-  size: "small" | "large";
+  size: "small" | "large" | null
 };
 
 const ThemeToggle = ({ size }: ThemeToggleProps) => {
