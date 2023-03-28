@@ -6,6 +6,7 @@ import PageLayout from "./layouts/PageLayout";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import BookmarksPage from "./pages/BookmarksPage";
+import AccountSettings from "./pages/AccountSettings";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/college" element={<CollegePage />} />
           <Route path="/location" element={<LocationPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="/account" element={<AccountSettings />} />
         </Route>
       </Routes>
     </>
