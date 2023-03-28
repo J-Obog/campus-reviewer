@@ -2,42 +2,42 @@
   {
     "id": 76,
     "name": "Whitman Hall",
-    "pictureUrl": "http://www.hoffarch.com/assets/SUNY-Whitman-overview.jpg",
+    "photo": "http://www.hoffarch.com/assets/SUNY-Whitman-overview.jpg",
     "rating": 3.5,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida. Morbi leo urna molestie at elementum eu facilisis. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. "
   },
   {
     "id": 77,
     "name": "Greenley Library",
-    "pictureUrl": "https://fastly.4sqi.net/img/general/600x600/C3JEOORYVCGYDYSKQAFX1W25A5CSH3WTR34QAY3DUIJ1DAXD.jpg",
+    "photo": "https://fastly.4sqi.net/img/general/600x600/C3JEOORYVCGYDYSKQAFX1W25A5CSH3WTR34QAY3DUIJ1DAXD.jpg",
     "rating": 4.5,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida. Morbi leo urna molestie at elementum eu facilisis. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. "
   },
   {
     "id": 78,
     "name": "Campus Center",
-    "pictureUrl": "https://dz0zjhi21dz2t.cloudfront.net/media/82479/photos/1019703/2048.jpg",
+    "photo": "https://dz0zjhi21dz2t.cloudfront.net/media/82479/photos/1019703/2048.jpg",
     "rating": 4.0,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida. Morbi leo urna molestie at elementum eu facilisis. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. "
   },
   {
     "id": 79,
     "name": "The School of Business",
-    "pictureUrl": "https://blogs.farmingdale.edu/sites/rambassadors/wp-content/uploads/sites/9/2018/04/schoolofbusiness.png",
+    "photo": "https://blogs.farmingdale.edu/sites/rambassadors/wp-content/uploads/sites/9/2018/04/schoolofbusiness.png",
     "rating": 5.0,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida. Morbi leo urna molestie at elementum eu facilisis. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. "
   },
   {
     "id": 80,
     "name": "Delores Quinyne Hall",
-    "pictureUrl": "https://i.ytimg.com/vi/EPQ_ahxov3c/maxresdefault.jpg",
+    "photo": "https://i.ytimg.com/vi/EPQ_ahxov3c/maxresdefault.jpg",
     "rating": 4.0,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida. Morbi leo urna molestie at elementum eu facilisis. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. "
   },
   {
     "id": 81,
     "name": "Orchard Hall",
-    "pictureUrl": "https://i0.wp.com/www.urbahn.com/wp-content/uploads/orchard-panorama-bolder.jpg?fit=1200%2C800&ssl=1",
+    "photo": "https://i0.wp.com/www.urbahn.com/wp-content/uploads/orchard-panorama-bolder.jpg?fit=1200%2C800&ssl=1",
     "rating": 3.0,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida. Morbi leo urna molestie at elementum eu facilisis. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. "
   }
