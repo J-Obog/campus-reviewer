@@ -1,32 +1,37 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
+import { updateTheme } from "../redux/slices/ThemeSlice";
+import { useAppSelector, useAppDispatch } from "../redux/store";
 
 type ThemeToggleProps = {
   size: "small" | "large";
 };
 
 const ThemeToggle = ({ size }: ThemeToggleProps) => {
-  const [theme, setTheme] = useState("");
+  const themeValue = useAppSelector((state) => state.theme.value);
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (!localStorage.theme) {
       localStorage.theme = "winter";
+      dispatch(updateTheme("winter"));
     } else {
-      setTheme(localStorage.theme);
+      dispatch(updateTheme(localStorage.theme));
     }
   }, []);
 
   useEffect(() => {
-    document.querySelector("html")?.setAttribute("data-theme", theme);
-  }, [theme]);
+    document.querySelector("html")?.setAttribute("data-theme", themeValue);
+  }, [themeValue]);
 
   const toggleTheme = () => {
-    if (theme === "winter") {
+    if (themeValue === "winter") {
       localStorage.theme = "night";
-      setTheme("night");
-    } else if (theme === "night") {
+      dispatch(updateTheme("night"));
+    } else if (themeValue === "night") {
       localStorage.theme = "winter";
-      setTheme("winter");
+      dispatch(updateTheme("winter"));
     }
   };
 
@@ -35,12 +40,16 @@ const ThemeToggle = ({ size }: ThemeToggleProps) => {
       className="flex cursor-pointer items-center gap-1 space-x-1"
       onClick={toggleTheme}
     >
-      <div className={`relative ${size === "large" && "text-4xl"} ${size === "small" && "text-xl"}`}>
-        {theme === "winter" && <BsMoon />}
-        {theme === "night" && <BsSun />}
+      <div
+        className={`relative ${size === "large" && "text-4xl"} ${
+          size === "small" && "text-xl"
+        }`}
+      >
+        {themeValue === "winter" && <BsMoon />}
+        {themeValue === "night" && <BsSun />}
       </div>
       <span className="font-semibold">
-        {theme === "winter" ? "Dark" : "Light"} mode
+        {themeValue === "winter" ? "Dark" : "Light"} mode
       </span>
     </div>
   );

@@ -1,6 +1,7 @@
 import { BsFillBookmarkFill, BsBookmark } from "react-icons/bs";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
+import { useAppSelector } from "../redux/store";
 
 type CardProps = {
   name: string;
@@ -10,7 +11,9 @@ type CardProps = {
 };
 
 const Card = ({ name, imgUrl, description, rating }: CardProps) => {
-  // TODO: Remoce local component state and change for API consumption once the endpoint is ready.
+  const themeValue = useAppSelector((state) => state.theme.value);
+
+  // TODO: Remove local component state and change for API consumption once the endpoint is ready.
   const [isBookmarked, setIsBookmarked] = useState<boolean>(false);
 
   const formatDescription = (description: string) => {
@@ -28,7 +31,7 @@ const Card = ({ name, imgUrl, description, rating }: CardProps) => {
   };
 
   return (
-    <div className={`card bg-base-100 shadow-xl ${localStorage.theme === "night" && "bg-card-dark"}`}>
+    <div className={`card bg-base-100 shadow-xl ${themeValue === "night" && "bg-card-dark"}`}>
       <figure className="h-56">
         <img
           src={imgUrl}
