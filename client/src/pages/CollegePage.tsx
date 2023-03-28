@@ -23,7 +23,7 @@ const CollegePage = () => {
             <button className="btn-primary btn-wide btn">add location</button>
           </div>
         </div>
-        <CardsContainer pageTitle="locations" itemType="locations" />
+        <CardsContainer pageTitle="locations" itemType="location" />
       </main>
     </>
   );
