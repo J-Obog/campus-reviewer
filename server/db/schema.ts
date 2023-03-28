@@ -9,6 +9,7 @@ export type College = {
     name: string;
     rating: number;
     photo?: string;
+    description?: string; 
 }
 
 export type Favorite = {
@@ -37,4 +38,5 @@ export type Location = {
     locationType: LocationType;
     name: string;
     rating: number; 
+    description?: string; 
 }
