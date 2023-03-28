@@ -27,7 +27,7 @@ const ThemeToggle = () => {
           <BsSun />
         </div>
       </label>
-      <span className="font-semibold">Toggle mode</span>
+      <span className="font-semibold">{theme === "winter" ? "Dark" : "Light"} mode</span>
     </div>
   );
 };
