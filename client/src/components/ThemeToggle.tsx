@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
-const ThemeToggle = () => {
+type ThemeToggleProps = {
+  size: "small" | "large";
+};
+
+const ThemeToggle = ({ size }: ThemeToggleProps) => {
   const [theme, setTheme] = useState("");
 
   useEffect(() => {
@@ -27,8 +31,11 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="flex items-center gap-1 cursor-pointer space-x-1" onClick={toggleTheme}>
-      <div className="relative text-4xl">
+    <div
+      className="flex cursor-pointer items-center gap-1 space-x-1"
+      onClick={toggleTheme}
+    >
+      <div className={`relative ${size === "large" && "text-4xl"} ${size === "small" && "text-xl"}`}>
         {theme === "winter" && <BsMoon />}
         {theme === "night" && <BsSun />}
       </div>

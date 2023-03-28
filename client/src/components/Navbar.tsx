@@ -27,7 +27,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a>Settings</a>
+            <a>Account Settings</a>
           </li>
           <li>
             <a>Saved</a>
@@ -36,7 +36,7 @@ const Navbar = () => {
             <a>Logout</a>
           </li>
           <li>
-            {/* <ThemeToggle /> */}
+            <ThemeToggle size="small" />
           </li>
         </ul>
       </div>

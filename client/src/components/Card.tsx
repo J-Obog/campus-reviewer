@@ -28,7 +28,7 @@ const Card = ({ name, imgUrl, description, rating }: CardProps) => {
   };
 
   return (
-    <div className="card bg-base-100 shadow-xl dark:bg-card-dark">
+    <div className={`card bg-base-100 shadow-xl ${localStorage.theme === "night" && "bg-card-dark"}`}>
       <figure className="h-56">
         <img
           src={imgUrl}
