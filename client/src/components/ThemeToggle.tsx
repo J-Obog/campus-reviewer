@@ -2,7 +2,15 @@ import { useState, useEffect } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"winter" | "night">("winter");
+  const [theme, setTheme] = useState("");
+
+  useEffect(() => {
+    if (!localStorage.theme) {
+      localStorage.theme = "winter";
+    } else {
+      setTheme(localStorage.theme);
+    }
+  }, []);
 
   useEffect(() => {
     document.querySelector("html")?.setAttribute("data-theme", theme);
@@ -10,8 +18,10 @@ const ThemeToggle = () => {
 
   const toggleTheme = () => {
     if (theme === "winter") {
+      localStorage.theme = "night";
       setTheme("night");
     } else if (theme === "night") {
+      localStorage.theme = "winter";
       setTheme("winter");
     }
   };
@@ -27,7 +37,9 @@ const ThemeToggle = () => {
           <BsSun />
         </div>
       </label>
-      <span className="font-semibold">{theme === "winter" ? "Dark" : "Light"} mode</span>
+      <span className="font-semibold">
+        {theme === "winter" ? "Dark" : "Light"} mode
+      </span>
     </div>
   );
 };
