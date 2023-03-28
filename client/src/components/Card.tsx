@@ -1,5 +1,6 @@
-import { BiBookmark } from "react-icons/bi";
+import { BsFillBookmarkFill, BsBookmark } from "react-icons/bs";
 import { Rating } from "react-simple-star-rating";
+import { useState } from "react";
 
 type CardProps = {
   name: string;
@@ -9,6 +10,9 @@ type CardProps = {
 };
 
 const Card = ({ name, imgUrl, description, rating }: CardProps) => {
+  // TODO: Remoce local component state and change for API consumption once the endpoint is ready.
+  const [isBookmarked, setIsBookmarked] = useState<boolean>(false);
+
   const formatDescription = (description: string) => {
     // The length of the description gets shortened to 100 characters
     let formatted =
@@ -38,8 +42,11 @@ const Card = ({ name, imgUrl, description, rating }: CardProps) => {
         <p>{formatDescription(description)}</p>
         <div className="card-actions items-end justify-between">
           <a className="link-primary link capitalize">see more</a>
-          <button className="text-4xl">
-            <BiBookmark />
+          <button
+            onClick={() => setIsBookmarked(!isBookmarked)}
+            className="text-4xl"
+          >
+            {isBookmarked ? <BsFillBookmarkFill /> : <BsBookmark />}
           </button>
         </div>
       </div>
