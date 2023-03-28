@@ -27,16 +27,11 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="flex items-center gap-1">
-      <label className="swap-rotate swap text-4xl">
-        <input type="checkbox" onClick={toggleTheme} />
-        <div className="swap-off h-10 w-10 fill-current">
-          <BsMoon />
-        </div>
-        <div className="swap-on h-10 w-10 fill-current">
-          <BsSun />
-        </div>
-      </label>
+    <div className="flex items-center gap-1 cursor-pointer space-x-1" onClick={toggleTheme}>
+      <div className="relative text-4xl">
+        {theme === "winter" && <BsMoon />}
+        {theme === "night" && <BsSun />}
+      </div>
       <span className="font-semibold">
         {theme === "winter" ? "Dark" : "Light"} mode
       </span>
