@@ -1,21 +1,6 @@
-import { BsMoon, BsSun } from "react-icons/bs";
-import { useState, useEffect } from "react";
+import ThemeToggle from "../components/ThemeToggle";
 
 const AccountSettings = () => {
-  const [theme, setTheme] = useState<"winter" | "night">("winter");
-
-  useEffect(() => {
-    document.querySelector("html")?.setAttribute("data-theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    if (theme === "winter") {
-      setTheme("night");
-    } else if (theme === "night") {
-      setTheme("winter");
-    }
-  };
-
   return (
     <div className="px-4 py-10 md:py-14 md:px-24 xl:px-48 2xl:px-72">
       <h1 className="mt-14 mb-10 text-xl font-bold">Account Settings</h1>
@@ -113,18 +98,7 @@ const AccountSettings = () => {
         <div className="divider"></div>
 
         <div>
-          <div className="flex items-center gap-1">
-            <label className="swap-rotate swap text-4xl">
-              <input type="checkbox" onClick={toggleTheme} />
-              <div className="swap-off h-10 w-10 fill-current">
-                <BsMoon />
-              </div>
-              <div className="swap-on h-10 w-10 fill-current">
-                <BsSun />
-              </div>
-            </label>
-            <span className="font-semibold">Toggle mode</span>
-          </div>
+          <ThemeToggle />
         </div>
 
         <div className="divider"></div>
