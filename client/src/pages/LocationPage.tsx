@@ -1,8 +1,11 @@
 import Hero from "../components/Hero";
 import SaveButton from "../components/SaveButton";
 import ReviewsContainer from "../components/ReviewsContainer";
+import { useAppSelector } from "../redux/store";
 
 const LocationPage = () => {
+  const themeValue = useAppSelector((state) => state.theme.value);
+
   return (
     <>
       <Hero
@@ -14,7 +17,11 @@ const LocationPage = () => {
         showButton={false}
         rating={3.5}
       />
-      <main className="px-4 py-10 md:py-14">
+      <main
+        className={`${
+          themeValue === "winter" && "bg-custom-light"
+        } px-4 py-10 md:py-14 ${themeValue === "night" && "bg-custom-dark"}`}
+      >
         <div>
           <div className="flex flex-col items-center gap-5 sm:flex-row sm:justify-center lg:ml-5 xl:justify-start">
             <SaveButton />
