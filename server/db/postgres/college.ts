@@ -16,12 +16,28 @@ export class CollegeModel {
     @Column()
     photo?: string
 
+    @Column()
+    description?: string;
+    
+    @Column()
+    address: string; 
+
+    @Column()
+    latitude: number; 
+
+    @Column()
+    longitude: number; 
+
     toObj = (): College => {
         return {
             id: this.id,
             name: this.name,
             rating: this.rating,
-            photo: this.photo
+            photo: this.photo,
+            description: this.description,
+            address: this.address,
+            latitude: this.latitude,
+            longitude: this.longitude, 
         }
     }
 }
