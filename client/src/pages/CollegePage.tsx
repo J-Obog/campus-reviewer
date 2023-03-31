@@ -1,21 +1,44 @@
 import Hero from "../components/Hero";
 import SaveButton from "../components/SaveButton";
 import CardsContainer from "../components/CardsContainer";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+type College = {
+  id: string;
+  name: string;
+  rating: number;
+  photo: string;
+  description: string | null;
+  address: string | null;
+  latitude: string | null;
+  longitud: string | null;
+};
 
 const CollegePage = () => {
+  const { id: collegeId } = useParams();
+  const apiUrl = `https://campus-reviewer-web.onrender.com/college/${collegeId}`;
+
+  const [college, setCollege] = useState<College>();
+
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((data) => setCollege(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
-      <Hero
-        image={
-          "https://image.cnbcfm.com/api/v1/image/106578950-1592283323893gettyimages-1212003765.jpeg?v=1592312973"
-        }
-        title={"Harvard University"}
-        description={
-          "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636 and named for its first benefactor, clergyman John Harvard, Harvard is the oldest institution of higher learning in the United States and among the most prestigious in the world."
-        }
-        showButton={false}
-        rating={5.0}
-      />
+      {college && (
+        <Hero
+          image={college.photo}
+          title={college.name}
+          description={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde dignissimos inventore maxime esse iste ipsam corrupti ut libero doloremque laborum nemo similique, mollitia alias reprehenderit, reiciendis veritatis ullam ex exercitationem."}
+          showButton={false}
+          rating={college.rating}
+        />
+      )}
       <main className="px-4 py-10 md:py-14">
         <div>
           <div className="flex flex-col items-center gap-5 sm:flex-row sm:justify-center lg:ml-5 xl:justify-start">
