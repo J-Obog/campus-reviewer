@@ -53,7 +53,7 @@ const Card = ({ id, name, imgUrl, description, rating, itemType }: CardProps) =>
         <div className="card-actions items-end justify-between">
           <div className="link-primary link capitalize">
             {itemType === "college" && <Link to={`/college/${id}`}>see more</Link>}
-            {itemType === "location" && <Link to={`/location`}>see more</Link>}
+            {itemType === "location" && <Link to={`/location/${id}`}>see more</Link>}
           </div>
           <button
             onClick={() => setIsBookmarked(!isBookmarked)}

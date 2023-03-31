@@ -11,28 +11,36 @@ type ReviewState = {
   comment: string;
 };
 
-const ReviewsContainer = () => {
+type ReviewsContainerProps = {
+  id: string;
+};
+
+const ReviewsContainer = ({ id }: ReviewsContainerProps) => {
   const [reviews, setReviews] = useState<ReviewState[]>([]);
   const themeValue = useAppSelector((state) => state.theme.value);
 
+  const apiUrl = `https://campus-reviewer-web.onrender.com/review?locationId=${id}`
+
   useEffect(() => {
-    fetch(`http://127.0.0.1:5173/src/reviews.json`)
+    fetch(apiUrl)
       .then((res) => res.json())
-      .then((data) => setReviews(data));
+      .then((data) => setReviews(data.reviews));
   }, []);
 
   return (
     <div className="my-16">
-      <h2 className={`page-subtitle ${themeValue === "night" && "text-white"}`}>Reviews</h2>
+      <h2 className={`page-subtitle ${themeValue === "night" && "text-white"}`}>
+        Reviews
+      </h2>
       <div className="my-12 space-y-10 px-2 sm:px-4">
         {reviews.map((review) => (
           <ReviewCard
             key={review.id}
             id={review.id}
-            avatarUrl={review.avatarUrl}
+            avatarUrl={"https://i.pravatar.cc/300"}
             userName={review.userName}
             rating={review.rating}
-            timestamp={review.timestamp}
+            timestamp={"2023-03-08 10:36:25"}
             comment={review.comment}
           />
         ))}

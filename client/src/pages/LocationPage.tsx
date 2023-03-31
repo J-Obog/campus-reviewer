@@ -2,21 +2,48 @@ import Hero from "../components/Hero";
 import SaveButton from "../components/SaveButton";
 import ReviewsContainer from "../components/ReviewsContainer";
 import { useAppSelector } from "../redux/store";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+type Location = {
+  id: string;
+  collegeId: string;
+  locationType: number;
+  name: string;
+  rating: number;
+  description: string;
+  address: string;
+  latitude: number;
+  longitude: number;
+  photo: string;
+};
 
 const LocationPage = () => {
   const themeValue = useAppSelector((state) => state.theme.value);
 
+  const { id } = useParams();
+  const apiUrl = `https://campus-reviewer-web.onrender.com/location/${id}`;
+
+  const [location, setLocation] = useState<Location>();
+
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((data) => setLocation(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
-      <Hero
-        image={"http://www.hoffarch.com/assets/SUNY-Whitman-overview.jpg"}
-        title={"Whitman Hall"}
-        description={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Justo donec enim diam vulputate ut pharetra sit amet aliquam."
-        }
-        showButton={false}
-        rating={3.5}
-      />
+      {location && (
+        <Hero
+          image={location.photo}
+          title={location.name}
+          description={location.description}
+          showButton={false}
+          rating={location.rating}
+        />
+      )}
       <main
         className={`${
           themeValue === "winter" && "bg-custom-light"
@@ -28,7 +55,7 @@ const LocationPage = () => {
             <button className="btn-primary btn-wide btn">add review</button>
           </div>
         </div>
-        <ReviewsContainer />
+        {location && <ReviewsContainer id={location.id} />}
       </main>
     </>
   );
