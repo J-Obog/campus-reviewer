@@ -18,7 +18,7 @@ export class ReviewResourceImpl implements ReviewResource {
                 return { status: 404, data: { message: "Review could not be found" }}; 
             }
 
-            return { status: 200, data: location }; 
+            return { status: 200, data: review }; 
         } catch {
             return { status: 500, data: { message: "Internal server error" }}; 
         }
