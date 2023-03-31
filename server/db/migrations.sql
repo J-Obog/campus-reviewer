@@ -36,3 +36,5 @@ CREATE TABLE IF NOT EXISTS reviews (
     "rating" FLOAT NOT NULL,
     "comment" VARCHAR NULL
 );
+
+ALTER TABLE locations ADD COLUMN IF NOT EXISTS photo VARCHAR NULL;
