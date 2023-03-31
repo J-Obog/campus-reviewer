@@ -5,6 +5,8 @@ import { CollegeResourceImpl } from "./api/resources/college";
 import { CollegeModel, CollegeStorePg } from "./db/postgres/college"
 import { LocationModel, LocationStorePg } from "./db/postgres/location"  
 import { LocationResourceImpl } from "./api/resources/location";
+import { ReviewModel, ReviewStorePg } from "./db/postgres/review";
+import { ReviewResourceImpl } from "./api/resources/review";
 
 const main = async () => {
     const config = getConfig(); 
@@ -19,7 +21,7 @@ const main = async () => {
             password: config.postgresConfig.password,
             port: config.postgresConfig.port,
             database: config.postgresConfig.database,
-            entities: [CollegeModel, LocationModel],
+            entities: [CollegeModel, LocationModel, ReviewModel],
         })    
     
         await conn.initialize(); 
@@ -27,13 +29,15 @@ const main = async () => {
         // db stores
         const collegeStore = new CollegeStorePg(conn); 
         const locationStore = new LocationStorePg(conn); 
+        const reviewStore = new ReviewStorePg(conn); 
         
         // resources
         const collegeResource = new CollegeResourceImpl(collegeStore); 
         const locationResource = new LocationResourceImpl(locationStore); 
+        const reviewResource = new ReviewResourceImpl(reviewStore); 
 
         // app server
-        const server = new ExpressServer(collegeResource, locationResource); 
+        const server = new ExpressServer(collegeResource, locationResource, reviewResource); 
         server.run(config.expressConfig.port); 
         
     } catch(err) {
