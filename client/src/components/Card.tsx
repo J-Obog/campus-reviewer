@@ -2,15 +2,18 @@ import { BsFillBookmarkFill, BsBookmark } from "react-icons/bs";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
 import { useAppSelector } from "../redux/store";
+import { Link } from "react-router-dom";
 
 type CardProps = {
+  id: string;
   name: string;
   imgUrl: string;
   description: string;
   rating: number;
+  itemType: "college" | "location";
 };
 
-const Card = ({ name, imgUrl, description, rating }: CardProps) => {
+const Card = ({ id, name, imgUrl, description, rating, itemType }: CardProps) => {
   const themeValue = useAppSelector((state) => state.theme.value);
 
   // TODO: Remove local component state and change for API consumption once the endpoint is ready.
@@ -31,7 +34,11 @@ const Card = ({ name, imgUrl, description, rating }: CardProps) => {
   };
 
   return (
-    <div className={`card bg-base-100 shadow-xl ${themeValue === "night" && "bg-card-dark"}`}>
+    <div
+      className={`card bg-base-100 shadow-xl ${
+        themeValue === "night" && "bg-card-dark"
+      }`}
+    >
       <figure className="h-56">
         <img
           src={imgUrl}
@@ -44,7 +51,10 @@ const Card = ({ name, imgUrl, description, rating }: CardProps) => {
         <Rating readonly allowFraction initialValue={rating} size={35} />
         <p>{formatDescription(description)}</p>
         <div className="card-actions items-end justify-between">
-          <a className="link-primary link capitalize">see more</a>
+          <div className="link-primary link capitalize">
+            {itemType === "college" && <Link to={`/college/${id}`}>see more</Link>}
+            {itemType === "location" && <Link to={`/location`}>see more</Link>}
+          </div>
           <button
             onClick={() => setIsBookmarked(!isBookmarked)}
             className="text-4xl"

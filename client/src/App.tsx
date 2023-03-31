@@ -4,7 +4,7 @@ import CollegePage from "./pages/CollegePage";
 import LocationPage from "./pages/LocationPage";
 import PageLayout from "./layouts/PageLayout";
 import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/LogInPage";
 import BookmarksPage from "./pages/BookmarksPage";
 import AccountSettings from "./pages/AccountSettings";
 
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route element={<PageLayout />}>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/college" element={<CollegePage />} />
+          <Route path="/college/:id" element={<CollegePage />} />
           <Route path="/location" element={<LocationPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
           <Route path="/account" element={<AccountSettings />} />

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAppSelector } from "../redux/store";
 import Card from "./Card";
+import { useParams } from "react-router-dom";
 
 type CardState = {
   id: string;
@@ -22,15 +23,17 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
 
   const [items, setItems] = useState<CardState[]>([]);
 
+  const { id: itemId } = useParams()
+
   useEffect(() => {
     if (itemType === "college") {
       fetch(`https://campus-reviewer-web.onrender.com/college`)
         .then((res) => res.json())
         .then((data) => setItems(data.colleges));
-    } else {
-      fetch(`http://127.0.0.1:5173/src/locations.json`)
+    } else if (itemType === "location") {
+      fetch(`https://campus-reviewer-web.onrender.com/location?collegeId=${itemId}`)
         .then((res) => res.json())
-        .then((data) => setItems(data));
+        .then((data) => setItems(data.locations));
     }
   }, [itemType]);
 
@@ -66,12 +69,14 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
           filterItems(items).map((item) => (
             <Card
               key={item.id}
+              id={item.id}
               name={item.name}
               imgUrl={item.photo}
               description={
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
               }
               rating={item.rating}
+              itemType={itemType}
             />
           ))}
       </div>
