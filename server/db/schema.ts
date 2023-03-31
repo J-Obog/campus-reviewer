@@ -10,6 +10,9 @@ export type College = {
     rating: number;
     photo?: string;
     description?: string; 
+    address: string; 
+    latitude: number; 
+    longitude: number; 
 }
 
 export type Favorite = {
@@ -39,4 +42,7 @@ export type Location = {
     name: string;
     rating: number; 
     description?: string; 
+    address: string; 
+    latitude: number; 
+    longitude: number; 
 }

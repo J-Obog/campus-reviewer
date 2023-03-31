@@ -19,13 +19,29 @@ export class LocationModel {
     @Column()
     rating: number
 
+    @Column()
+    description?: string
+
+    @Column()
+    address: string; 
+
+    @Column()
+    latitude: number; 
+
+    @Column()
+    longitude: number; 
+
     toObj = (): Location => {
         return {
             id: this.id,
             collegeId: this.collegeId,
             locationType: this.locationType,
             name: this.name,
-            rating: this.rating
+            rating: this.rating,
+            description: this.description,
+            address: this.address,
+            latitude: this.latitude,
+            longitude: this.longitude, 
         }
     }
 }

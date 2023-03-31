@@ -1,8 +1,15 @@
 import ThemeToggle from "../components/ThemeToggle";
+import { useAppSelector } from "../redux/store";
 
 const AccountSettings = () => {
+  const themeValue = useAppSelector((state) => state.theme.value);
+
   return (
-    <div className="px-4 py-10 md:py-14 md:px-24 xl:px-48 2xl:px-72">
+    <div
+      className={`px-4 py-10 md:py-14 md:px-24 xl:px-48 2xl:px-72 ${
+        themeValue === "winter" && "bg-custom-light"
+      } ${themeValue === "night" && "bg-custom-dark"}`}
+    >
       <h1 className="mt-14 mb-10 text-xl font-bold">Account Settings</h1>
       <form action="">
         <div className="flex flex-col items-center gap-3 lg:flex-row">

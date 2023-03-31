@@ -9,6 +9,8 @@ module.exports = {
       },
       colors: {
         "card-dark": "rgb(18, 18, 18)",
+        "custom-light": "#f6f6f6",
+        "custom-dark": "#0f172a"
       },
     },
   },
