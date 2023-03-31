@@ -17,7 +17,7 @@ const App = () => {
         <Route element={<PageLayout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/college/:id" element={<CollegePage />} />
-          <Route path="/location" element={<LocationPage />} />
+          <Route path="/location/:id" element={<LocationPage />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
           <Route path="/account" element={<AccountSettings />} />
         </Route>
