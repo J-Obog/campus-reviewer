@@ -19,7 +19,9 @@ const ReviewsContainer = ({ id }: ReviewsContainerProps) => {
   const [reviews, setReviews] = useState<ReviewState[]>([]);
   const themeValue = useAppSelector((state) => state.theme.value);
 
-  const apiUrl = `https://campus-reviewer-web.onrender.com/review?locationId=${id}`
+  const [paginate, setPaginate] = useState<number>(6);
+
+  const apiUrl = `https://campus-reviewer-web.onrender.com/review?locationId=${id}`;
 
   useEffect(() => {
     fetch(apiUrl)
@@ -45,9 +47,16 @@ const ReviewsContainer = ({ id }: ReviewsContainerProps) => {
           />
         ))}
       </div>
-      <div className="flex justify-center">
-        <button className="btn-wide btn mt-3">load more</button>
-      </div>
+      {paginate < reviews.length && (
+        <div className="flex justify-center">
+          <button
+            onClick={() => setPaginate((prev) => prev + 6)}
+            className="btn-wide btn mt-3"
+          >
+            load more
+          </button>
+        </div>
+      )}
     </div>
   );
 };

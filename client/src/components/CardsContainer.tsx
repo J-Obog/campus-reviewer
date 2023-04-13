@@ -22,8 +22,9 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
   const themeValue = useAppSelector((state) => state.theme.value);
 
   const [items, setItems] = useState<CardState[]>([]);
+  const [paginate, setPaginate] = useState<number>(6);
 
-  const { id: itemId } = useParams()
+  const { id: itemId } = useParams();
 
   useEffect(() => {
     if (itemType === "college") {
@@ -31,7 +32,9 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
         .then((res) => res.json())
         .then((data) => setItems(data.colleges));
     } else if (itemType === "location") {
-      fetch(`https://campus-reviewer-web.onrender.com/location?collegeId=${itemId}`)
+      fetch(
+        `https://campus-reviewer-web.onrender.com/location?collegeId=${itemId}`
+      )
         .then((res) => res.json())
         .then((data) => setItems(data.locations));
     }
@@ -57,32 +60,39 @@ const CardsContainer = ({ pageTitle, itemType }: CardsContainerProps) => {
     <div className="my-16">
       {pageTitle && (
         <h2
-          className={`page-subtitle ${
-            themeValue === "night" && "text-white"
-          }`}
+          className={`page-subtitle ${themeValue === "night" && "text-white"}`}
         >
           {pageTitle}
         </h2>
       )}
       <div className="my-12 grid grid-cols-1 justify-center gap-14 sm:mx-3 sm:grid-cols-2 sm:gap-x-6 md:mx-6 md:gap-x-10 lg:mx-10 lg:grid-cols-3 xl:mx-14 2xl:mx-20 2xl:grid-cols-4">
         {items &&
-          filterItems(items).map((item) => (
-            <Card
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              imgUrl={item.photo}
-              description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              }
-              rating={item.rating}
-              itemType={itemType}
-            />
-          ))}
+          filterItems(items)
+            .slice(0, paginate)
+            .map((item) => (
+              <Card
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                imgUrl={item.photo}
+                description={
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                }
+                rating={item.rating}
+                itemType={itemType}
+              />
+            ))}
       </div>
-      <div className="flex justify-center">
-        <button className="btn-wide btn mt-3">load more</button>
-      </div>
+      {paginate < items.length && (
+        <div className="flex justify-center">
+          <button
+            onClick={() => setPaginate((prev) => prev + 6)}
+            className="btn-wide btn mt-3"
+          >
+            load more
+          </button>
+        </div>
+      )}
     </div>
   );
 };
