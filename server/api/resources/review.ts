@@ -4,6 +4,8 @@ import { RestRequest, RestResponse } from "../rest";
 import { CreateReviewSchema } from "../validation/review";
 import Ajv from "ajv"; 
 import { Review } from "../../db/schema";
+import {v4 as uuidv4} from "uuid";
+
 
 
 export class ReviewResourceImpl implements ReviewResource {
@@ -23,8 +25,10 @@ export class ReviewResourceImpl implements ReviewResource {
                 return { status: 400, data: { message: validate.errors![0].message} }; 
             }  
 
+            const reviewId = uuidv4();
+
             const review: Review = {
-                id: new Date().toString(),
+                id: reviewId,
                 userId: req.body.userId,
                 locationId: req.body.locationId,
                 rating: req.body.rating,
