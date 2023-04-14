@@ -26,13 +26,15 @@ export class ReviewResourceImpl implements ReviewResource {
             }  
 
             const reviewId = uuidv4();
+            const timeNow = new Date().getTime();
 
             const review: Review = {
                 id: reviewId,
                 userId: req.body.userId,
                 locationId: req.body.locationId,
                 rating: req.body.rating,
-                comment: req.body.comment
+                comment: req.body.comment,
+                createdAt: timeNow, 
             }
 
             this.reviewStore.insertReview(review); 
