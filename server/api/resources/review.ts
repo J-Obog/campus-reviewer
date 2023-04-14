@@ -1,6 +1,11 @@
 import { ReviewResource } from "../resource"; 
 import { ReviewStore } from "../../db/store";
 import { RestRequest, RestResponse } from "../rest";
+import { CreateReviewSchema } from "../validation/review";
+import Ajv from "ajv"; 
+import { Review } from "../../db/schema";
+import {v4 as uuidv4} from "uuid";
+
 
 
 export class ReviewResourceImpl implements ReviewResource {
@@ -9,6 +14,35 @@ export class ReviewResourceImpl implements ReviewResource {
     constructor(reviewStore: ReviewStore) {
         this.reviewStore = reviewStore; 
     }   
+    
+    createReview = async (req: RestRequest): Promise<RestResponse> => {
+        try {
+            const ajv = new Ajv(); 
+            const validate = ajv.compile(CreateReviewSchema); 
+            const valid = validate(req.body); 
+
+            if(!valid) {
+                return { status: 400, data: { message: validate.errors![0].message} }; 
+            }  
+
+            const reviewId = uuidv4();
+
+            const review: Review = {
+                id: reviewId,
+                userId: req.body.userId,
+                locationId: req.body.locationId,
+                rating: req.body.rating,
+                comment: req.body.comment
+            }
+
+            this.reviewStore.insertReview(review); 
+
+            return { status: 200, data: { message: "OK" } }; 
+        } catch {
+            return { status: 500, data: { message: "Internal server error" }}; 
+        }
+    }
+
 
     getReview = async (req: RestRequest): Promise<RestResponse> => {
         try {

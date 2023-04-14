@@ -13,4 +13,5 @@ export interface LocationStore {
 export interface ReviewStore {
     getReview(id: string): Promise<Review | null>; 
     getReviewByLocation(locationId: string): Promise<Review[]>;  
+    insertReview(review: Review): Promise<Boolean>; 
 }

@@ -13,4 +13,5 @@ export interface LocationResource {
 export interface ReviewResource {
     getReview(req: RestRequest): Promise<RestResponse>; 
     getReviewByLocation(req: RestRequest): Promise<RestResponse>;
+    createReview(req: RestRequest): Promise<RestResponse>;
 }
