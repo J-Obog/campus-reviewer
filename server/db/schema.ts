@@ -2,6 +2,7 @@ export type User = {
     id: string;
     email: string;
     password: string; 
+    createdAt: number; 
 }
 
 export type College = {
@@ -27,6 +28,8 @@ export type Review = {
     locationId: string; 
     rating: number;
     comment?: string;
+    createdAt: number; 
+    updatedAt?: number; 
 }
 
 export enum LocationType {
@@ -46,4 +49,6 @@ export type Location = {
     latitude: number; 
     longitude: number; 
     photo?: string; 
+    createdAt: number; 
+    updatedAt?: number; 
 }

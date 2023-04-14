@@ -34,6 +34,12 @@ export class LocationModel {
     @Column()
     photo?: string
 
+    @Column()
+    createdAt: number
+
+    @Column()
+    updatedAt?: number
+
     toObj = (): Location => {
         return {
             id: this.id,
@@ -46,6 +52,8 @@ export class LocationModel {
             latitude: this.latitude,
             longitude: this.longitude, 
             photo: this.photo,
+            createdAt: this.createdAt,
+            updatedAt: this.updatedAt
         }
     }
 }
