@@ -9,6 +9,21 @@ export class ReviewResourceImpl implements ReviewResource {
     constructor(reviewStore: ReviewStore) {
         this.reviewStore = reviewStore; 
     }   
+    
+    createReview = async (req: RestRequest): Promise<RestResponse> => {
+        try {
+            const review = await this.reviewStore.getReview(req.urlParams.id); 
+
+            if (!review) {
+                return { status: 404, data: { message: "Review could not be found" }}; 
+            }
+
+            return { status: 200, data: review }; 
+        } catch {
+            return { status: 500, data: { message: "Internal server error" }}; 
+        }
+    }
+
 
     getReview = async (req: RestRequest): Promise<RestResponse> => {
         try {

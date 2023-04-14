@@ -37,6 +37,11 @@ export class ReviewStorePg implements ReviewStore {
         this.repo = conn.getRepository(ReviewModel); 
     } 
 
+    insertReview = async (review: Review): Promise<Boolean> =>  {
+        await this.repo.save(review); 
+        return true;  
+    }
+
     getReviewByLocation = async (locationId: string): Promise<Review[]> =>  {
         const reviews = await this.repo.findBy({ locationId: locationId }); 
         return reviews.map(review => review.toObj()); 
