@@ -19,6 +19,12 @@ export class ReviewModel {
     @Column()
     comment?: string;
 
+    @Column()
+    createdAt: number;
+
+    @Column()
+    updatedAt?: number;
+
     toObj = (): Review  => {
         return {
             id: this.id,
@@ -26,6 +32,8 @@ export class ReviewModel {
             locationId: this.locationId, 
             rating: this.rating,
             comment: this.comment,
+            createdAt: this.createdAt,
+            updatedAt: this.updatedAt
         }
     }
 }
